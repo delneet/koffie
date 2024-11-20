@@ -5,80 +5,117 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
-    background-color: #121212;
-    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
-    background-size: cover;
-    color: #fff;
+    background-color: #f7983f; /* Reference color */
+    color: whitesmoke; /* Dark brown */
     font-family: Arial, sans-serif;
 }
 
 .container {
+    margin: 0 20px;
+    position: relative;
     text-align: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 600px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.background-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container h1,
+.name-input,
+#pickWinnerButton,
+#winner {
+    position: relative;
+    z-index: 1;
+}
+
+#winner {
+    font-size: 1.5em;
+    color: whitesmoke;
+    background-color: #f7983f; /* Reference color */
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .container h1 {
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
     margin-bottom: 20px;
-}
-
-.container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
+    color: whitesmoke;
+    margin-top: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .name-input {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .name-input input {
     padding: 10px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    border: 1px solid #f7b07f; /* Light variation of reference color */
     margin-right: 10px;
 }
 
 .name-input button {
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
-    background-color: #ff9800;
-    color: white;
+    background-color: #f7b07f; /* Light variation of reference color */
+    color: #4e342e; /* Dark brown */
     cursor: pointer;
 }
 
 .name-input button:hover {
-    background-color: #e68900;
+    background-color: #f7983f; /* Reference color */
 }
 
 #pickWinnerButton {
-    padding: 10px 20px;
-    border-radius: 15px;
+    padding: 20px;
+    border-radius: 10px;
     border: none;
-    background-color: #4caf50;
-    color: white;
+    background-color: #f7983f; /* Reference color */
+    color: whitesmoke;
     cursor: pointer;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 #pickWinnerButton:hover {
-    background-color: #45a049;
+    background-color: #e6892e; /* Darker variation of reference color */
 }
 
 #nameList {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 50vh;
+    margin: auto 0 0;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #nameList li {
     padding: 10px;
-    border-radius: 15px;
-    background-color: #333;
-    color: white;
+    border-radius: 10px;
+    background-color: rgba(247, 152, 63, 0.8); /* Reference color with opacity */
+    color: #4e342e; /* Dark brown */
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
@@ -89,11 +126,11 @@ body {
     padding: 5px 10px;
     border-radius: 10px;
     border: none;
-    background-color: #ff5722;
-    color: white;
+    background-color: #f7b07f; /* Light variation of reference color */
+    color: #4e342e; /* Dark brown */
     cursor: pointer;
 }
 
 #nameList li button:hover {
-    background-color: #e64a19;
+    background-color: #f7983f; /* Reference color */
 }

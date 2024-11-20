@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function addName() {
     const nameInput = document.getElementById('name');
     const name = nameInput.value.trim();
+    const winnerElement = document.getElementById('winner');
     if (name) {
       names.push(name);
       updateNameList();
       nameInput.value = '';
+      winnerElement.hidden = true;
     }
   }
 
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function pickWinner() {
     const winnerElement = document.getElementById('winner');
+    winnerElement.hidden = false;
     if (names.length > 0) {
       const winner = names[Math.floor(Math.random() * names.length)];
       winnerElement.textContent = `${winner} zet de koffie!`;
