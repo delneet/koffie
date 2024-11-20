@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const names = [];
+  const names = JSON.parse(localStorage.getItem('names')) || [];
 
   document.getElementById('addNameButton').addEventListener('click', addName);
   document.getElementById('pickWinnerButton').addEventListener('click', pickWinner);
+
+  updateNameList();
 
   function addName() {
     const nameInput = document.getElementById('name');
@@ -13,12 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
       updateNameList();
       nameInput.value = '';
       winnerElement.hidden = true;
+      saveNames();
     }
   }
 
   function removeName(index) {
     names.splice(index, 1);
     updateNameList();
+    saveNames();
   }
 
   function updateNameList() {
@@ -48,5 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       winnerElement.textContent = 'Voeg eerst namen toe';
     }
+  }
+
+  function saveNames() {
+    localStorage.setItem('names', JSON.stringify(names));
   }
 });
