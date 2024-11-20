@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const names = JSON.parse(localStorage.getItem('names')) || [];
 
+  const nameInput = document.getElementById('name');
   document.getElementById('addNameButton').addEventListener('click', addName);
   document.getElementById('pickWinnerButton').addEventListener('click', pickWinner);
+  nameInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      addName();
+    }
+  });
 
   updateNameList();
 
   function addName() {
-    const nameInput = document.getElementById('name');
     const name = nameInput.value.trim();
     const winnerElement = document.getElementById('winner');
     if (name) {
@@ -17,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       winnerElement.hidden = true;
       saveNames();
     }
+    nameInput.focus();
   }
 
   function removeName(index) {
