@@ -29,3 +29,71 @@ body {
     height: auto;
     border-radius: 15px;
 }
+
+.name-input {
+    margin-top: 20px;
+}
+
+.name-input input {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.name-input button {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+}
+
+.name-input button:hover {
+    background-color: #e68900;
+}
+
+#pickWinnerButton {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#pickWinnerButton:hover {
+    background-color: #45a049;
+}
+
+#nameList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#nameList li {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #333;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nameList li button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff5722;
+    color: white;
+    cursor: pointer;
+}
+
+#nameList li button:hover {
+    background-color: #e64a19;
+}
